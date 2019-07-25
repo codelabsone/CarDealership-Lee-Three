@@ -1,70 +1,22 @@
-class Cars
+require_relative 'cars'
+require_relative 'inventory'
 
-  attr_accessor :year, :make, :model, :price, :color
-  def initialize(year, make, model, price, color)
-      @year = year
-      @make = make
-      @model = model
-      @price = price
-      @color = color
-  end
+testrun = Inventory.new
 
-  def to_s
-    "#{@color} #{@year} #{@make} #{@model}: $#{@price}."
-  end
+car1 = Cars.new(2014, "Toyota", "Rav4", "Red", 29000)
+car2 = Cars.new(2019, "Honda", "Civic", "Blue", 24000)
+car3 = Cars.new(2019, "alfa romeo", "stelvio", "Green", 60000)
+car4 = Cars.new(2019, "maserati", "ghibli","Green", 75000)
+car5 = Cars.new(2019, "lamborghini", "aventador", "maroon", 200000)
+car6 = Cars.new(2019, "ferrari", "812 superfast", "purple", 195000)
 
-end
+testrun.list(car1)
+testrun.list(car2)
+testrun.list(car3)
+testrun.list(car4)
+testrun.list(car5)
+testrun.list(car6)
 
-
-
-class Customer
-
-  attr_accessor :budget, :make, :model, :year, :color
-  def initialize(budget, make="", model="", year="", color="")
-      @budget = budget
-      @make = make
-      @model = model
-      @year = year
-      @color = color
-  end
-
-  def to_s
-    "Customer can spend $#{@budget}. They are looking for a #{@color} #{@year} #{@make} #{@model}."
-  end
-end
-
-class Inventory
-
-
-
-end
-
-car1 = Cars.new(2014, "Toyota", "Rav4", 29000, "Red")
-car2 = Cars.new(2019, "Honda", "Civic", 24000, "Blue")
-car3 = Cars.new(2019, "alfa romeo", "stelvio", 60000)
-car4 = Cars.new(2019, "maserati", "ghibli", 75000, "Green")
-car5 = Cars.new(2019, "lamborghini", "aventador", 90000, "Black")
-car6 = Cars.new(2019, "ferrari", "812 superfast", 150000, "White")
-customer1 = Customer.new(10000, "Ford", "Ranger", 1984, "White")
-
-
-
-def ilisting_price(make, model, price="Ask for price")
-   "#{make.capitalize} #{model.capitalize} Price: #{price}"
-end
-
-text= " Welcome to European Imports!!! "
-puts text.center(80, '$')
-puts "How much can you spend today?"
-budget = gets.chomp
-
-puts "Your budget is $#{budget.to_i}."
-
-prices = [100, 1000, 10000, 100000, 1000000]
-cars = ["Nothing", "A ride home", "Our tow truck", "Jaguar", "Lamborghini"]
-
-loop_var = 0
-while budget >= prices[loop_var]
-    puts "-#{cars[loop_var]}, $#{prices[loop_var]}\n"
-    loop_var += 1
-end
+car1.add_detail(50000, "used")
+puts car1
+car1.details
