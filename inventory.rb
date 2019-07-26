@@ -17,21 +17,6 @@ class Inventory
         puts @listings
     end
 
-    def sale
-        puts  " Welcome to European Imports!!! ".center(80, '$')
-        puts "How much can you spend today?.......$$$:"
-        cust_budget = gets.chomp.to_i
-        @budget = cust_budget
-        puts "You're budget is $#{@budget}."
-    end
 
-    def display_budgeted_listings
-        puts "Here are cars within your budget:"
-        @listings.each do |car|
-            if car.price <= @budget
-                puts car
-            end
-        end
-    end
 
 end

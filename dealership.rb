@@ -1,5 +1,6 @@
 require_relative 'cars'
 require_relative 'inventory'
+require_relative 'sales'
 
 testrun = Inventory.new
 
