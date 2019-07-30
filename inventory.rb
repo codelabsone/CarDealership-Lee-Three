@@ -7,6 +7,7 @@ class Inventory
     attr_reader :year, :make, :model, :color, :price
     def initialize
         @listings = []
+        @profits = 0
     end
 
     def list(car)
@@ -15,6 +16,10 @@ class Inventory
 
     def display_listings
         puts @listings
+    end
+
+    def purchase
+
     end
 
     def menu
@@ -51,14 +56,32 @@ class Inventory
                     puts car if car.year == year_choice
                 end
             when 2
-                "\nWhat make are you looking for ?\n"
-                make_choice = gets.chomp.
+                puts "\nWhat make are you looking for ?\n"
+                make_choice = gets.chomp
                 puts "\n"
                 @listings.each do |car|
                     puts car if car.make == make_choice
                 end
+            when 3
+                puts "\nWhat model are you looking for ?\n"
+                model_choice = gets.chomp
+                puts "\n"
+                @listings.each do |car|
+                    puts car if car.model == model_choice
+                end
+            when 4
+                puts "\nWhat color are you looking for ?\n"
+                color_choice = gets.chomp
+                puts "\n"
+                @listings.each do |car|
+                    puts car if car.color == color_choice
+                end
             end
         when 4
+            puts "\nIf you have chosen your vehicle, please make an adequate payment...$$:"
+        when 5
+            puts 
+
         end
     end
 
