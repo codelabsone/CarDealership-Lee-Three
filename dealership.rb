@@ -1,6 +1,5 @@
-require_relative 'cars'
 require_relative 'inventory'
-require_relative 'sales'
+require_relative 'dealershipmethods'
 
 testrun = Inventory.new
 
@@ -18,6 +17,4 @@ testrun.list(car4)
 testrun.list(car5)
 testrun.list(car6)
 
-car1.add_detail(50000, "used")
-puts car1
-car1.details
+testrun.menu
