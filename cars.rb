@@ -3,14 +3,14 @@ class Cars
     attr_accessor :year, :make, :model, :color, :price, :mileage, :new_or_used
     def initialize(year, make, model, color, price)
         @year = year
-        @make = make
-        @model = model
-        @color = color
+        @make = make.capitalize
+        @model = model.capitalize
+        @color = color.capitalize
         @price = price
     end
 
     def to_s
-        "#{@year} #{@make.capitalize} #{@model.capitalize}, #{@color.capitalize}: $#{@price}"
+        "#{@year} #{@make} #{@model}, #{@color}: $#{@price}"
     end
 
     def add_detail(mileage, new_or_used)

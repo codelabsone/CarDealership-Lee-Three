@@ -19,8 +19,23 @@ class Inventory
     end
 
     def purchase
-
+        
     end
+
+    def menu_return
+        puts "\nWhat would you like to do?"
+        puts "\n\t1. Purchase Vehicle\n\t2. Return to Menu\n\t3. Exit\n"
+        choice = gets.chomp.to_i
+        case choice
+        when 1
+            self.purchase
+        when 2
+            self.menu
+        when 3
+        end
+    end
+
+
 
     def menu
         puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$".center(100) + "\n\n"
@@ -35,13 +50,16 @@ class Inventory
         when 1
             puts "\nThis is our entire inventory:\n".center(100)
             puts @listings
+            self.menu_return
+
         when 2
             puts "\nPlease enter your budget...$$:"
             budget = gets.chomp.to_i
-            puts "\n"
+            puts "\nThese are the vehicles in your budget:\n"
             @listings.each do |car|
                 puts car if car.price <= budget
             end
+            self.menu_return
         when 3
             puts "\nSearch by:"
             puts "\n\t1. Year\n\t2. Make\n\t3. Model\n\t4. Color\n"
@@ -57,30 +75,30 @@ class Inventory
                 end
             when 2
                 puts "\nWhat make are you looking for ?\n"
-                make_choice = gets.chomp
+                make_choice = gets.chomp.capitalize
                 puts "\n"
                 @listings.each do |car|
                     puts car if car.make == make_choice
                 end
             when 3
                 puts "\nWhat model are you looking for ?\n"
-                model_choice = gets.chomp
+                model_choice = gets.chomp.capitalize
                 puts "\n"
                 @listings.each do |car|
                     puts car if car.model == model_choice
                 end
             when 4
                 puts "\nWhat color are you looking for ?\n"
-                color_choice = gets.chomp
+                color_choice = gets.chomp.capitalize
                 puts "\n"
                 @listings.each do |car|
                     puts car if car.color == color_choice
                 end
             end
+            self.menu_return
         when 4
-            puts "\nIf you have chosen your vehicle, please make an adequate payment...$$:"
+            self.purchase
         when 5
-            puts 
 
         end
     end
