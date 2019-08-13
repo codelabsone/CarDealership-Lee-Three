@@ -1,5 +1,8 @@
-class Cars
+require_relative 'MenuMethods'
 
+class Cars2
+
+    include MenuMethods
     attr_accessor :year, :make, :model, :color, :price, :mileage, :new_or_used
 
     def initialize(year, make, model, color, price)

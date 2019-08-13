@@ -4,6 +4,7 @@ require_relative 'dealershipmethods'
 class Inventory
 
     attr_accessor :listings, :budget, :sale, :year, :make, :model, :color, :price
+
     def initialize
         @listings = []
         @profits = 0
@@ -18,9 +19,7 @@ class Inventory
         puts @listings
     end
 
-    def purchase
-        #needs written
-    end
+### Menu Feature
 
     def menu
         DealershipMethods.greeting
@@ -43,6 +42,7 @@ class Inventory
         end
     end
 
+    # Re-routes user to options
     def menu_return
         puts "\nWhat would you like to do?"
         puts "\n\t1. Purchase Vehicle\n\t2. Return to Menu\n\t3. Exit\n"
