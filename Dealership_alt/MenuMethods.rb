@@ -9,6 +9,7 @@ module MenuMethods
         #Main options
         options
     end
+
     ###Sub Methods
 
     #Main menu splash screen
@@ -30,14 +31,14 @@ module MenuMethods
         when 2
 
         when 3
-            search(inventory)
+            search
         when 4
             #exit
         end
     end
 
     #Search feature
-    def self.search(inventory)
+    def self.search
         #prompt
         puts "\nSearch by make, model, color, or year:\n"
         #Gets choice, and decides between year and all search criteria
@@ -49,7 +50,7 @@ module MenuMethods
         end
         #Displaying matches
         puts "\nDisplaying all matches:"
-        inventory.each do |car|
+        @listings.each do |car|
             if criteria === car.make
                 puts car
             elsif criteria === car.model

@@ -42,9 +42,4 @@ module DealershipMethods
         end
     end
 
-    #Removes vehicle for purchase and accepts funds
-    def self.purchase(inventory)
-        
-    end
-
 end

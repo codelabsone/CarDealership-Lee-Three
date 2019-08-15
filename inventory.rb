@@ -19,6 +19,18 @@ class Inventory
         puts @listings
     end
 
+    # Lets customer make purchase
+    def purchase
+        puts "\nPlease make a payment-$$:"
+        payment = gets.chomp.to_i
+        @profits += payment
+        puts "\nPlease select your vehicle:"
+        affordable_cars = Hash.new
+        @listings.each do |car|
+            if 
+    end
+
+
 ### Menu Feature
 
     def menu
@@ -35,7 +47,7 @@ class Inventory
                 DealershipMethods.search(@listings)
                 self.menu_return
             when 4
-                self.purchase
+                DealershipMethods.purchase(@listings)
                 self.menu_return
             when 5
                 #exit
@@ -55,7 +67,5 @@ class Inventory
             when 3
         end
     end
-
-
 
 end
