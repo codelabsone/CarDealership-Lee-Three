@@ -20,7 +20,7 @@ puts ilisting_price("maserati", "ghibli", "$75,000")
 puts ilisting_price("lamborghini", "aventador")
 puts ilisting_price("ferrari", "812 superfast")
 
-#THursday July 18
+#Thursday July 18
 
 class Cars
 

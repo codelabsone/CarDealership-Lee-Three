@@ -1,14 +1,18 @@
 require 'finance'
 
+include Finance
+
 class Payment_Calculator
 
+  @loan_rate = 0.05
+  @loan_amount = 50000
+  @loan_length = 30
 
+  rate = Finance::Rate.new(@loan_rate, :apr, :duration => (@loan_length * 12))
+  amortization = Finance::Amortization.new(@loan_amount, rate)
 
-  rate = Rate.new(@loan_rate.to_i, :apr, :duration => (loan_length * 12))
-  amortization = Amortization.new(loan_amount, rate)
+  puts amortization.payment
 
-  amortization.payment
-  DecNum('-1229.91')
 
   # puts "What is the potential loan amount?"
   # @loan_amount = gets
