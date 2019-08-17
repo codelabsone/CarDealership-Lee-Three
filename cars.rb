@@ -1,3 +1,4 @@
+#Creates individual car objects
 class Cars
 
     attr_accessor :year, :make, :model, :color, :price, :mileage, :new_or_used
