@@ -1,0 +1,26 @@
+********** menu.rb README **********
+
+********** Menu Module **********
+    Menu is a module that launches the main menu system for customer
+interaction with the current working inventory. It passes in only the listings
+attribute (the array holding car objects) of the inventory class (inventory.rb).
+
+    It is called as a typical module method would be called and accepts the
+inventory. Example:
+
+    */
+
+    car1 = Cars.new(2014, "Toyota", "Rav4", "Red", 29000)
+
+    test_inventory = Inventory.new
+    test_inventory.list(car1)
+
+    Menu.menu(test_inventory)
+
+    */
+
+    This menu system handles all user interaction with our inventory with that
+one simple invocation.
+
+## NOTE: As of 08/17/19 our 'purchase' and 'sell' features indicated within the
+menu are not currently implemented.

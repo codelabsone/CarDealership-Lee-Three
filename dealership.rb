@@ -1,8 +1,11 @@
-require_relative 'cars'
+# driver/test code for our dealership program
 require_relative 'inventory'
+require_relative 'menu'
 
+# creates a new working inventory
 testrun = Inventory.new
 
+# creating faked car data for said inventory
 car1 = Cars.new(2014, "Toyota", "Rav4", "Red", 29000)
 car2 = Cars.new(2019, "Honda", "Civic", "Blue", 24000)
 car3 = Cars.new(2019, "alfa romeo", "stelvio", "Green", 60000)
@@ -65,4 +68,5 @@ testrun.list(car28)
 testrun.list(car29)
 testrun.list(car30)
 
-testrun.menu
+# launches menu system on current inventory
+Menu.menu(testrun)
