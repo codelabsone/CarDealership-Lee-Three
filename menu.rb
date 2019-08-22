@@ -35,8 +35,8 @@ module Menu
             when 3 # search feature
                 search(inventory)
                 puts "\n What would you like to do?\n"
-            when 4  # purchase feature NEEDS METHOD
-                puts "\nWe're sorry, that feature is not available right now."
+            when 4  # purchase feature
+                purchase(inventory)
                 puts "\n What would you like to do?\n"
             when 5 # sale feature NEEDS METHOD
                 puts "\nWe're sorry, that feature is not available right now."
@@ -90,6 +90,20 @@ module Menu
                 #exit
             end
         end
+    end
+
+    #Removes vehicle for purchase and accepts funds
+    def self.purchase(inventory)
+        puts "\nPlease search for a car you'd like.\n\n"
+        inventory.each do |car|
+            puts car
+        end
+        puts "\nPlease enter the ID of the vehicle you want.\n"
+        car_id = gets.chomp.to_i
+        inventory.each do |car|
+            inventory.delete(car) if car.id == car_id
+        end
+        puts "\nThank you for your purchase!\n"
     end
 
 end

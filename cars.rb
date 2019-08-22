@@ -1,18 +1,18 @@
-#Creates individual car objects
 class Cars
 
-    attr_accessor :year, :make, :model, :color, :price, :mileage, :new_or_used
+    attr_accessor :year, :make, :model, :color, :price, :mileage, :new_or_used, :id
 
-    def initialize(year, make, model, color, price)
+    def initialize(id, year, make, model, color, price)
         @year = year
         @make = make.capitalize
         @model = model.capitalize
         @color = color.capitalize
         @price = price
+        @id = id
     end
 
     def to_s
-        "#{@year} #{@make} #{@model}, #{@color}: $#{@price}"
+        "#{@id}: #{@year} #{@make} #{@model}, #{@color}: $#{@price}"
     end
 
     def add_detail(mileage, new_or_used)
