@@ -3,14 +3,27 @@
 <% @cars.each do |car| %>
 <article>
     <header>
-        <h2><%= car.make %> <%= car.model %></h2>
+        <h2><%= car.year %> <%= car.make %> <%= car.model %></h2>
     </header>
-    <p><%= car.year %>, <%=car.color %></p>
     <table>
     <tr>
+        <th>Color:</th>
+        <td><%=car.color %></td>
+    </tr>
+    <tr>
         <th>Price:</th>
-        <td><%= number_to_currency(car.price) %></td>
+        <td><%= number_to_currency(car.price) %>
+            <! This is only for testing! >
+            <button onclick="noPurchase()">BUY NOW!</button>
+        </td>
     </tr>
     </table>
 </article>
 <% end %>
+
+<! Testing for button functions >
+<script type="text/javascript">
+    function noPurchase() {
+        document.write('Car is not available for purchase');
+    }
+</script>
