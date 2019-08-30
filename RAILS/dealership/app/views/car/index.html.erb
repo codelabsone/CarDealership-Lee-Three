@@ -1,7 +1,16 @@
-<h1>Cars:</h1>
+<h1>Movies</h1>
 
-<ul>
-    <% @cars.each do |car| %>
-    <li><%= car %></li>
-    <% end %>
-</ul>
+<% @cars.each do |car| %>
+<article>
+    <header>
+        <h2><%= car.make %> <%= car.model %></h2>
+    </header>
+    <p><%= car.year %>, <%=car.color %></p>
+    <table>
+    <tr>
+        <th>Price:</th>
+        <td><%= number_to_currency(car.price) %></td>
+    </tr>
+    </table>
+</article>
+<% end %>
