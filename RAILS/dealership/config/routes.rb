@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  get "car" => "car#index"
+    root "car#index"
+    get "car" => "car#index"
+    get "car/:id" => "car#show", as: "vehicle"
 end
