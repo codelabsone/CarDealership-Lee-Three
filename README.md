@@ -1,5 +1,12 @@
 # CarDealership-Lee-Three
-Lucas, Nicholas, Kayla, Jacob CarDealership
+Nicholas, Roy, Jacob CarDealership
+
+###### Rails Section ######
+
+Rails App is currently in its beginning stages of development, but entirely
+non-functional as of this time. 
+
+###### Ruby Code Files ######
 
 This is a Ruby program for searching, buying, and selling vehicles.
 
