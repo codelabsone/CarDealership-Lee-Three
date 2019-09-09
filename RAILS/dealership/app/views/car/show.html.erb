@@ -14,5 +14,7 @@
     </tr>
     </table>
 </article>
-
-<%= link_to("All Cars", root_path) %>
+<nav>
+    <%= link_to("All Cars", root_path) %> |
+    <%= link_to("Edit", edit_vehicle_path(@car)) %>
+</nav>

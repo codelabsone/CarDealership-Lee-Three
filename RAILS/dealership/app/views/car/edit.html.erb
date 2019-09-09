@@ -1,0 +1,12 @@
+<h1>Editing <%= @car.make %> <%= @car.model %></h1>
+
+<%= form_for(@car) do |f| %>
+    <p>
+        <%= f.label :make %><br>
+        <%= f.text_field :make %>
+    </p>
+    <p>
+        <%= f.submit %>
+        <%= link_to "Go Back", vehicle_path(@car) %>
+    </p>
+<% end %>
