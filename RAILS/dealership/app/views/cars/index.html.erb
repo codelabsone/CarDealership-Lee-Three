@@ -3,7 +3,7 @@
 <% @cars.each do |car| %>
 <article>
     <header>
-        <h2><%= link_to("#{car.year} #{car.make} #{car.model}", vehicle_path(car)) %></h2>
+        <h2><%= link_to("#{car.year} #{car.make} #{car.model}", car_path(car)) %></h2>
     </header>
 </article>
 <% end %>

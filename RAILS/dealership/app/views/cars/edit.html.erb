@@ -1,0 +1,28 @@
+<h1>Editing <%= @car.make %> <%= @car.model %></h1>
+
+<%= form_for(@car) do |f| %>
+    <p>
+        <%= f.label :make %><br>
+        <%= f.text_field :make %>
+    </p>
+    <p>
+        <%= f.label :model %><br>
+        <%= f.text_field :model %>
+    </p>
+    <p>
+        <%= f.label :year %><br>
+        <%= f.number_field :year %>
+    </p>
+    <p>
+        <%= f.label :color %><br>
+        <%= f.text_field :color %>
+    </p>
+    <p>
+        <%= f.label :price %><br>
+        <%= f.number_field :price %>
+    </p>
+    <p>
+        <%= f.submit %>
+        <%= link_to "Go Back", car_path(@car) %>
+    </p>
+<% end %>
