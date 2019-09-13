@@ -15,6 +15,9 @@
     </table>
 </article>
 <nav>
-    <%= link_to("All Cars", root_path) %> |
-    <%= link_to("Edit", edit_car_path(@car)) %>
+    <!--<%= link_to("Edit", edit_car_path(@car)) %> |-->
+    <%= link_to "<button>BUY NOW!</button>".html_safe, car_path(@car), method: :delete,
+    data: {confirm: "Purchase Vehicle?"} %>
+    <%= link_to "All Cars", root_path %>
+
 </nav>

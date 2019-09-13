@@ -1,4 +1,7 @@
-<h1>Cars</h1>
+<h1><strong>EUROPEAN IMPORTS</strong></h1>
+
+
+<h2>Our current listings:</h2>
 
 <% @cars.each do |car| %>
 <article>
@@ -7,3 +10,6 @@
     </header>
 </article>
 <% end %>
+
+
+<%= link_to "<button>Sell Your Vehicle</button>".html_safe, new_car_path %>
