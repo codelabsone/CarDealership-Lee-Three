@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
     def index
-        @cars = Car.all
+        @cars = Car.lowest_price
     end
 
     def show
