@@ -3,8 +3,8 @@ Nicholas, Roy, Jacob CarDealership
 
 ###### Rails Section ######
 
-Rails App is currently in its beginning stages of development, but entirely
-non-functional as of this time. 
+Rails App is currently in its beginning stages of development.Cars can be 'bought'
+and 'sold' using create and destroy. 
 
 ###### Ruby Code Files ######
 
