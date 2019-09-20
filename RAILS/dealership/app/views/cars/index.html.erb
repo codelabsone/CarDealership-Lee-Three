@@ -1,13 +1,10 @@
-
 <h2 id="listings">Our current listings:</h2>
 
 <% @cars.each do |car| %>
 <article>
     <header>
-        <h2><%= link_to("#{car.year} #{car.make} #{car.model}", car_path(car)) %></h2>
+        <h2 id="car_listing"><%= link_to("#{car.year} #{car.make} #{car.model}",
+         car_path(car)) %></h2>
     </header>
 </article>
 <% end %>
-
-
-<%= link_to "<button>Sell Your Vehicle</button>".html_safe, new_car_path %>

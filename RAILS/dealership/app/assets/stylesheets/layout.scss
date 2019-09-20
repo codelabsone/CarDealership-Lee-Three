@@ -12,13 +12,23 @@ h1#title {
     font-weight: normal;
     font-family: serif, Helvetica;
     font-variant: small-caps;
-    font-size: 50px; 
+    font-size: 50px;
 }
 
 footer#footer {
     text-align: center;
     padding: 7px;
-    color: $background-color;
-    background: $primary-color;
-    border-top: 6px solid $background-color;
+    background: $background-color;
+    color: $primary-color;
+    border-top: 6px solid $primary-color;
+}
+
+aside#sidebar {
+    padding: 8px;
+    float: left;
+    width: 100px;
+    height: auto, 100%;
+    background: lighten($background-color, 25%);
+    color: $primary-color;
+    border: 2px solid lighten($primary-color, 50%);
 }
