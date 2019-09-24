@@ -3,7 +3,9 @@
 <% @cars.each do |car| %>
 <article>
     <header>
-        <h2 id="car_listing"><%= link_to("#{car.year} #{car.make} #{car.model}",
+        <h2 id="car_listing">
+        <%= image_for(car) %><br>
+        <%= link_to("#{car.year} #{car.make} #{car.model}",
          car_path(car)) %></h2>
     </header>
 </article>

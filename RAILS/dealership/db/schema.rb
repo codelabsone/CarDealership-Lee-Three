@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_230155) do
+ActiveRecord::Schema.define(version: 2019_09_23_234812) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_230155) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name", default: ""
+    t.integer "mileage"
   end
 
 end

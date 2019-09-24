@@ -38,7 +38,7 @@ private
 
     def car_params
         params.require(:car).
-        permit(:make, :model, :color, :year, :price)
+        permit(:make, :model, :color, :year, :price, :image_file_name, :mileage)
     end
 
 end

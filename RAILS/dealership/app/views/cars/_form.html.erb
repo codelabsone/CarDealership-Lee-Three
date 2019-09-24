@@ -20,6 +20,14 @@
         <%= f.number_field :price %>
     </p>
     <p>
+        <%= f.label :mileage %><br>
+        <%= f.number_field :mileage %>
+    </p>
+    <p>
+        <%= f.label :image_file_name %><br>
+        <%= f.text_field :image_file_name %>
+    </p>
+    <p>
         <%= f.submit %>
         <%= link_to "Cancel", root_path %>
     </p>

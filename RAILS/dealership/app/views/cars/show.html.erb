@@ -1,8 +1,13 @@
 <article>
-    <header>
+    <header id="show_page">
+        <%= image_for(@car) %>
         <h2><%= @car.year %> <%= @car.make %> <%= @car.model %></h2>
     </header>
     <table>
+    <tr>
+        <th>Miles:</th>
+        <td><%=@car.mileage %></td>
+    </tr>
     <tr>
         <th>Color:</th>
         <td><%=@car.color %></td>
