@@ -14,8 +14,11 @@ class CarsController < ApplicationController
 
     def update
         @car = Car.find(params[:id])
-        @car.update(car_params)
-        redirect_to @car
+        if @car.update(car_params)
+            redirect_to @car, notice: 'Car modified.'
+        else
+            render :edit
+        end
     end
 
     def new
@@ -24,14 +27,18 @@ class CarsController < ApplicationController
 
     def create
         @car = Car.new(car_params)
-        @car.save
-        redirect_to @car
+        if @car.save
+            redirect_to @car, notice: 'Car Sold.'
+        else
+            render :new
+        end
+
     end
 
     def destroy
         @car = Car.find(params[:id])
         @car.destroy
-        redirect_to root_path
+        redirect_to root_path, notice: 'Enjoy your Purchase.'
     end
 
 private

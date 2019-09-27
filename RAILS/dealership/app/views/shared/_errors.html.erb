@@ -1,0 +1,14 @@
+<% if @car.errors.any? %>
+    <header>
+        <h2> Oh no! That didn't work :(</h2>
+        <h3>
+            Please fix
+            <%= pluralize(@car.errors.count, 'error') %>:
+        </h3>
+    </header>
+    <ul>
+        <%= @car.errors.full_messages.each do |error| %>
+        <li><%= error.humanize %></li>
+        <% end %>
+    </ul>
+<% end %>
