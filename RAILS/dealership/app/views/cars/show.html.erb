@@ -1,0 +1,27 @@
+<article>
+    <header id="show_page">
+        <%= image_for(@car) %>
+        <h2><%= @car.year %> <%= @car.make %> <%= @car.model %></h2>
+    </header>
+    <table>
+    <tr>
+        <th>Miles:</th>
+        <td><%=@car.mileage %></td>
+    </tr>
+    <tr>
+        <th>Color:</th>
+        <td><%=@car.color %></td>
+    </tr>
+    <tr>
+        <th>Price:</th>
+        <td><%= number_to_currency(@car.price) %>
+        </td>
+    </tr>
+    </table>
+</article>
+<nav>
+    <%= link_to("Customize Vehicle", edit_car_path(@car)) %> |
+    <%= link_to "Buy Now", car_path(@car), method: :delete,
+    data: {confirm: "Purchase Vehicle?"} %>
+
+</nav>

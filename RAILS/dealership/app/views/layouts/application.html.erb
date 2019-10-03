@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dealership</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <%= render 'layouts/header' %>
+
+  <p>
+      <%= flash[:notice] %>
+  </p>
+
+  <%= render 'layouts/sidebar' %>
+
+  <body id="main">
+    <%= yield %>
+  </body>
+
+  <%= render 'layouts/footer' %>
+
+</html>

@@ -1,0 +1,44 @@
+@import 'colors';
+
+
+header#header {
+    text-align: center;
+    padding: 7px;
+    color: $primary-color;
+    background: $background-color;
+    border-bottom: 6px solid $primary-color;
+}
+
+body#main {
+    background-image: url('../images/hex_bg_editted.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1#title {
+    font-weight: normal;
+    font-family: serif, Helvetica;
+    font-variant: small-caps;
+    font-size: 50px;
+}
+
+footer#footer {
+    text-align: center;
+    padding: 7px;
+    background: $background-color;
+    color: $primary-color;
+    border-top: 6px solid $primary-color;
+}
+
+aside#sidebar {
+    padding: 8px;
+    float: right;
+    width: 100px;
+    height: auto, 100%;
+    background: lighten($background-color, 25%);
+    color: $primary-color;
+    border: 2px solid lighten($primary-color, 50%);
+}
+
+
+$body-bg: transparent;
