@@ -1,5 +1,5 @@
 @import 'colors';
-
+@import 'fonts';
 
 header#header {
     text-align: center;
@@ -10,16 +10,15 @@ header#header {
 }
 
 body#main {
-    background-image: url('../images/hex_bg_editted.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
 
 h1#title {
-    font-weight: normal;
-    font-family: serif, Helvetica;
-    font-variant: small-caps;
-    font-size: 50px;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    font-size: $header-font-size;
+    color: $header-font-color;
 }
 
 footer#footer {
@@ -30,14 +29,53 @@ footer#footer {
     border-top: 6px solid $primary-color;
 }
 
+
+
 aside#sidebar {
-    padding: 8px;
-    float: right;
-    width: 100px;
-    height: auto, 100%;
-    background: lighten($background-color, 25%);
-    color: $primary-color;
-    border: 2px solid lighten($primary-color, 50%);
+    width: 125px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: $background-color;
+    color: $header-font-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    font-size: 20px;
+    color: $header-font-color;
+
+    :hover {
+    color: lighten($header-font-color, 100%);
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    color: $header-font-color;
+    text-decoration: none;
+    }
+
+    :link {
+    color: $header-font-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    color: $header-font-color;
+    text-decoration: none;
+    }
+
+    :visited {
+    color: $header-font-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    color: $header-font-color;
+    text-decoration: none;
+    }
+
+    :active {
+    color: $header-font-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    color: $header-font-color;
+    text-decoration: none;
+    }
 }
 
 

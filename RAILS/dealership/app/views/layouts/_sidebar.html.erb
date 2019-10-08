@@ -1,6 +1,13 @@
 <aside id="sidebar">
-    <%= link_to "All Vehicles", root_path %><br>
-    <%= link_to "Sell a Vehicle", new_car_path %><br>
+    <% if current_user %>
+        
+            <%= link_to current_user.name, current_user %><br>
+
+        <%= link_to 'Sign Out', session_path, method: :delete %><br>
+    <% else %>
     <%= link_to 'Sign In', new_session_path %><br>
-    <%= link_to 'Sign Up', signup_path %>
+        <%= link_to 'Sign Up', signup_path %><br>
+    <% end %>
+    <%= link_to "All Vehicles", root_path %><br>
+    <%= link_to "Sell a Vehicle", new_car_path %>
 </aside>

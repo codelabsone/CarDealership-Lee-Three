@@ -15,10 +15,11 @@ class SessionsController < ApplicationController
         end
     end
 
+    def destroy
+        session[:user_id] = nil
+        redirect_to root_path, notice: 'Successfully signed out.'
+    end
+
 private
 
-    def self.authenticate(email, password)
-        user = User.find_by(email: email)
-        user && user.authenticate(password)
-    end
 end

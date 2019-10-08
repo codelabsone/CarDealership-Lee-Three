@@ -1,0 +1,31 @@
+<%= form_for(@user) do |f| %>
+  <fieldset>
+    <ul>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </li>
+      <li>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+     </li>
+    </ul>
+    <li>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+   </li>
+   <% if @user.new_record? %>
+        <p>
+            <%= f.submit 'Sign Up' %>
+        </p>
+    <% else %>
+        <p>
+            <%= f.submit 'Update Account' %>
+        </p>
+    <% end %>
+  </fieldset>
+<% end %>
