@@ -3,22 +3,33 @@
 
 header#header {
     text-align: center;
-    padding: 7px;
     color: $primary-color;
-    background: $background-color;
-    border-bottom: 6px solid $primary-color;
+}
+
+.header-image {
+    background-image: url("lambo.jpg");
+    height: 175px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: static;
+    margin: 0;
+    border-bottom: 6px solid $background-color;
 }
 
 body#main {
     background-size: cover;
     background-attachment: fixed;
+    margin: 0;
 }
 
 h1#title {
+    margin: 0;
     font-weight: $header-font-weight;
     font-family: $header-font-family;
-    font-size: $header-font-size;
-    color: $header-font-color;
+    font-size: 40px;
+    color: $background-color;
+    text-align: center;
 }
 
 footer#footer {
@@ -33,6 +44,7 @@ footer#footer {
 
 aside#sidebar {
     width: 125px;
+    height: 160px;
     padding: 10px;
     position: absolute;
     top: 0;
@@ -42,7 +54,7 @@ aside#sidebar {
     color: $header-font-color;
     font-weight: $header-font-weight;
     font-family: $header-font-family;
-    font-size: 20px;
+    font-size: 18px;
     color: $header-font-color;
 
     :hover {
@@ -77,6 +89,3 @@ aside#sidebar {
     text-decoration: none;
     }
 }
-
-
-$body-bg: transparent;
