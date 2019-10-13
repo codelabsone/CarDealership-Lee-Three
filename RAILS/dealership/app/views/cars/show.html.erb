@@ -1,12 +1,12 @@
-<article>
-    <header id="show_page">
+<article id="standard">
+    <h2 id="main-text">
         <%= image_for(@car) %>
         <h2><%= @car.year %> <%= @car.make %> <%= @car.model %></h2>
-    </header>
+    </h2>
     <table>
     <tr>
         <th>Miles:</th>
-        <td><%=@car.mileage %></td>
+        <td><%= number_with_delimiter(@car.mileage, :delimiter => ',') %></td>
     </tr>
     <tr>
         <th>Color:</th>
@@ -18,10 +18,11 @@
         </td>
     </tr>
     </table>
+    <% if current_user %>
+        <%= link_to("Customize Vehicle", edit_car_path(@car)) %> |
+        <%= link_to "Buy Now", car_path(@car), method: :delete,
+            data: {confirm: "Purchase Vehicle?"} %>
+    <% else %>
+        <%= link_to("Click for Options", new_session_path) %>
+    <% end %>
 </article>
-<nav>
-    <%= link_to("Customize Vehicle", edit_car_path(@car)) %> |
-    <%= link_to "Buy Now", car_path(@car), method: :delete,
-    data: {confirm: "Purchase Vehicle?"} %>
-
-</nav>

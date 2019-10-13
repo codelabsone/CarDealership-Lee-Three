@@ -7,9 +7,9 @@ header#header {
 }
 
 .header-image {
-    background-image: url("lambo.jpg");
+    background-image: url("ferrari.jpg");
     height: 175px;
-    background-position: center;
+    background-position: 0% 30%;
     background-repeat: no-repeat;
     background-size: cover;
     position: static;
@@ -27,19 +27,107 @@ h1#title {
     margin: 0;
     font-weight: $header-font-weight;
     font-family: $header-font-family;
-    font-size: 40px;
+    font-size: 50px;
     color: $background-color;
     text-align: center;
+}
+
+h2#main-text {
+    text-align: center;
+    color: $background-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    font-size: 25px;
+}
+
+fieldset#form {
+    label {
+        display: block;
+        color: $background-color;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+        }
+
+    }
+}
+
+.button {
+    color: $background-color;
+    background-color: $primary-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    font-size: 16px;
+    border: none;
+}
+
+article#standard {
+    color: $background-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    font-size: 18px;
+    margin: 10px;
+
+    :link {
+    color: $background-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
+
+    :visited {
+    color: $background-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
+
+    :active {
+    color: $background-color;
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
 }
 
 footer#footer {
     text-align: center;
     padding: 7px;
-    background: $background-color;
-    color: $primary-color;
-    border-top: 6px solid $primary-color;
-}
+    background: $primary-color;
+    color: $background-color;
+    border-top: 6px solid $background-color;
+    border-bottom: 6px solid $background-color;
 
+    :hover {
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
+
+    :link {
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
+
+    :visited {
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
+
+    :active {
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    text-decoration: none;
+    }
+}
 
 
 aside#sidebar {
@@ -61,7 +149,6 @@ aside#sidebar {
     color: lighten($header-font-color, 100%);
     font-weight: $header-font-weight;
     font-family: $header-font-family;
-    color: $header-font-color;
     text-decoration: none;
     }
 
