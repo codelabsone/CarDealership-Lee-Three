@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     resource :session
     get 'signup' => 'users#new'
     root "cars#index"
-    resources :cars
+    resources :cars do
+        resources :wishes
+    end
 end

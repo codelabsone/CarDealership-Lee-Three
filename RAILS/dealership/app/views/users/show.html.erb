@@ -2,6 +2,16 @@
     My Account
 </header>
 
+<% if @wished_cars.any? %>
+<ul>
+    <% @wished_cars.each do |car| %>
+    <li>
+        <%= link_to "#{car.make} #{car.model}", car %>
+    </li>
+    <% end %>
+</ul>
+<% end %>
+
 <%= link_to 'Edit Account', edit_user_path(@user) %>|
 <%= link_to 'Delete Account', @user,
     method: :delete,

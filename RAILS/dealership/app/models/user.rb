@@ -6,6 +6,9 @@ class User < ApplicationRecord
     format: /\A\S+@\S+\z/,
     uniqueness: { case_sensitive: false }
 
+    has_many :wishes, dependent: :destroy
+    has_many :wished_cars, through: :wishes, source: :car
+
 
     def self.authenticate(email, password)
         user = User.find_by(email: email)

@@ -18,11 +18,23 @@
         </td>
     </tr>
     </table>
-    <% if current_user %>
-        <%= link_to("Customize Vehicle", edit_car_path(@car)) %> |
-        <%= link_to "Buy Now", car_path(@car), method: :delete,
-            data: {confirm: "Purchase Vehicle?"} %>
-    <% else %>
-        <%= link_to("Click for Options", new_session_path) %>
+
+
+    <!--Set up for admin privilages-->
+    <% if current_user_admin? %>
+        <%= link_to("Edit Vehicle", edit_car_path(@car)) %> |
+        <%= link_to "Delete Vehicle", car_path(@car), method: :delete,
+            data: {confirm: "Delete Vehicle?"} %>
+
+    <% elsif current_user %>
+        <% if @current_wish %>
+            <%= link_to 'Remove from my Wishlist', car_wish_path(@car,
+            @current_wish),method: :delete %> | 
+        <% else %>
+            <%= link_to 'Add to my Wishlist', car_wishes_path(@car), method: :post %> |
+        <% end %>
+        Financing Options
+        <!-- TODO: Make link below redirect to faux financing page -->
+        <!-- link_to("Click for Options", new_session_path) -->
     <% end %>
 </article>

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        @wished_cars = @user.wished_cars
     end
 
     def new

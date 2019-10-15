@@ -1,11 +1,17 @@
 class CarsController < ApplicationController
 
+before_action :require_admin, except: [:index, :show]
+
     def index
         @cars = Car.lowest_price
     end
 
     def show
         @car = Car.find(params[:id])
+
+        if current_user
+            @current_wish = current_user.wishes.find_by(car_id: @car.id)
+        end
     end
 
     def edit

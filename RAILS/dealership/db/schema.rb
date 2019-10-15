@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_30_223545) do
+ActiveRecord::Schema.define(version: 2019_10_14_235057) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 2019_09_30_223545) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
+  end
+
+  create_table "wishes", force: :cascade do |t|
+    t.integer "car_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_wishes_on_car_id"
+    t.index ["user_id"], name: "index_wishes_on_user_id"
   end
 
 end
