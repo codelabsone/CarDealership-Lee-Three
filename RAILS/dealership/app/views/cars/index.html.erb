@@ -1,12 +1,17 @@
-<h2 id="main-text">Our Inventory:</h2>
+<% if current_user %>
 
-<% @cars.each do |car| %>
-<article id="standard">
-    <header>
-        <h2 id="car_listing">
-        <%= image_for(car) %><br>
-        <%= link_to("#{car.year} #{car.make} #{car.model}",
-         car_path(car)) %></h2>
-    </header>
-</article>
+    <h2 id="main-text">Our Inventory:</h2>
+
+    <% @cars.each do |car| %>
+    <article id="standard">
+        <header>
+            <h2 id="car_listing">
+                <%= image_for(car) %><br>
+                <%= link_to("#{car.year} #{car.make} #{car.model}",
+                car_path(car)) %></h2>
+            </header>
+        </article>
+    <% end %>
+<% else %>
+    <%= render 'splash' %>
 <% end %>
